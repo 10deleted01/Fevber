@@ -18,7 +18,8 @@ function UI.Window:init(title, width, height)
     self.height = height or 300
     self.visible = true
     self.uiElements = {}
-    self:createWindow()
+    self.createWindow()
+    self.padding = 10  -- Space between elements
 end
 
 function UI.Window:createWindow()
@@ -39,6 +40,19 @@ function UI.Window:createWindow()
 
     window.Parent = game.CoreGui
     self.window = window
+end
+
+function UI.Window:addElement(element)
+    table.insert(self.uiElements, element)
+    self:updatePositions()
+end
+
+function UI.Window:updatePositions()
+    local currentY = 30  -- Start below the title bar
+    for _, element in ipairs(self.uiElements) do
+        element:setPosition(10, currentY)
+        currentY = currentY + element:getSize().Y.Offset + self.padding
+    end
 end
 
 function UI.Window:toggleVisibility()
@@ -71,6 +85,10 @@ end
 
 function UI.Button:setPosition(x, y)
     self.button.Position = UDim2.new(0, x, 0, y)
+end
+
+function UI.Button:getSize()
+    return self.button.Size
 end
 
 -- Create the Slider class
@@ -112,6 +130,14 @@ function UI.Slider:createSlider()
     self.slider = slider
 end
 
+function UI.Slider:setPosition(x, y)
+    self.slider.Position = UDim2.new(0, x, 0, y)
+end
+
+function UI.Slider:getSize()
+    return self.slider.Size
+end
+
 function UI.Slider:getValue()
     return self.value
 end
@@ -119,8 +145,8 @@ end
 -- Example usage
 local window = new(UI.Window, "Test Window", 400, 300)
 local button = new(UI.Button, "Click Me", function() print("Button Clicked!") end)
-button:setPosition(100, 100)
+window:addElement(button)
 local slider = new(UI.Slider, 0, 100, 50, function(val) print("Slider Value: " .. val) end)
-slider:createSlider()
+window:addElement(slider)
 
 return UI
