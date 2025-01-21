@@ -9,27 +9,27 @@ local heartbeatConnection
 
 local Window = Rayfield:CreateWindow({
    Name = "Blade Ball",
-   LoadingTitle = "Baconking",
-   LoadingSubtitle = "by baconking",
+   LoadingTitle = "By Windows_40",
+   LoadingSubtitle = "best dev fr",
    ConfigurationSaving = {
       Enabled = false,
       FolderName = "Inferno Scripts",
       FileName = "Inferno Scripts"
    },
    Discord = {
-      Enabled = true,
-      Invite = "hNX8VxcjMF",
+      Enabled = false,
+      Invite = "",
       RememberJoins = true
    },
    KeySystem = false,
    KeySettings = {
       Title = "Inferno Scripts",
       Subtitle = "Key System",
-      Note = "Join the discord (discord.gg/hNX8VxcjMF)",
+      Note = "Join the discord (Google.com)",
       FileName = "InfernoKey",
       SaveKey = true,
       GrabKeyFromSite = false,
-      Key = "Hello"
+      Key = "1234"
    }
 })
 
