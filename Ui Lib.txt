@@ -42,7 +42,7 @@ function Lib:Drag(frame,parent)
 end
 
 function Lib.Window(Title)
-	Title = Title or "Fevber Hub 1.0😴"
+	Title = Title or "Fevber uni 1.0😴"
 
 	local UiLib = Instance.new("ScreenGui")
 	local Main = Instance.new("Frame")
@@ -171,7 +171,7 @@ function Lib.Window(Title)
 	LibraryTitle.Size = UDim2.new(0, 300, 0, 39)
 	LibraryTitle.ZIndex = 5
 	LibraryTitle.FontFace = Font.new([[rbxasset://fonts/families/Nunito.json]], Enum.FontWeight.ExtraBold, Enum.FontStyle.Normal);
-	LibraryTitle.Text = "UI Lib"
+	LibraryTitle.Text = "Fevber uni 1.0😴"
 	LibraryTitle.TextColor3 = Color3.fromRGB(227, 227, 227)
 	LibraryTitle.TextScaled = true
 	LibraryTitle.TextSize = 37.000
